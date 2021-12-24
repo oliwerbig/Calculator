@@ -4,16 +4,16 @@ using System.Text;
 
 namespace CalculatorLibrary
 {
-    public class Constant : IExpression
+    public class Constant : IEvaluable
     {
-        double Value { get; set; }
+        double Value { get; set; } = 0;
 
         public Constant(double value)
         {
-            this.Value = value;
+            Value = value;
         }
         
-        public double Calculate()
+        public double Evaluate()
         {
             return Value;
         }

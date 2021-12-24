@@ -4,8 +4,8 @@ using System.Text;
 
 namespace CalculatorLibrary
 {
-    public interface IExpression
+    public interface IEvaluable
     {
-        double Calculate();
+        double Evaluate();
     }
 }

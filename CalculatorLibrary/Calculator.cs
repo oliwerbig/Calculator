@@ -6,20 +6,29 @@ namespace CalculatorLibrary
 {
     public class Calculator
     {
+        public Queue<IEvaluable> Output = new();
+        public Stack<IEvaluable> Operator = new();
+
+        public double Calculate(string expression)
+        {
+            // TODO: Implement Shunting-yard algorithm for expression parsing
+            return 0;
+        }
+
         public double Test()
         {
-            IExpression e =
-                    new Divider(
-                            new Multiplier(
-                                    new Negate(new Constant(5.0)),
-                                    new Divider(new Constant(9.0), new Constant(6.0))
+            IEvaluable e =
+                    new Division(
+                            new Multiplication(
+                                    new Negation(new Constant(5.0)),
+                                    new Division(new Constant(9.0), new Constant(6.0))
                             ),
-                            new Adder(
+                            new Addition(
                                     new Constant(7.0),
-                                    new Subtracter(new Constant(2.0), new Constant(1.5))
+                                    new Subtraction(new Constant(2.0), new Constant(1.5))
                             )
                     );
-            return e.Calculate();
+            return e.Evaluate();
         }
     }
 }

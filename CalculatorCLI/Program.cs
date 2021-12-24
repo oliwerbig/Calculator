@@ -8,7 +8,8 @@ namespace CalculatorCLI
         static void Main(string[] args)
         {
             Calculator calculator = new Calculator();
-            Console.WriteLine(calculator.Test());
+            string expression = Console.ReadLine();
+            Console.WriteLine(calculator.Calculate(expression));
             Console.ReadKey();
         }
     }
